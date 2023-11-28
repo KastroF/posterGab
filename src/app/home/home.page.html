@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="lato">
+      Page d'accueil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)='allItems()' [formGroup]="myForm">
+    <ion-item>
+      <ion-label class="lato" position="stacked">
+        Entrez le code Commerce
+      </ion-label>
+      <ion-input formControlName="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lato" position="stacked">
+        Entrez la référence
+      </ion-label>
+      <ion-input formControlName="ref"></ion-input>
+    </ion-item>
+    <ion-button class="lato" expand="full"  type="submit" >Creer le PDF</ion-button>
+
+    <img [src]="photoPreview" *ngIf="photoPreview" />
+
+    <ion-button class="lato" expand="full" (click)='takePicture()' >Ajouter un logo (Optionnel)</ion-button>
+    <ion-button class="lato" expand="full" (click)='downloadPdf()' color="secondary" [disabled]="!pdfObj" >Ouvrir Pdf</ion-button>
+  </form>
+
+  <div style="font-size: 50px; font-weight: bolder; width: 100%; text-align: center; margin-top: 30px; 
+  " class="lato">
+  
+    {{count}}
+
+  </div>
+
+
+  <ion-footer  class="ion-no-border">
+    <ion-toolbar>
+      <ion-title style="font-size: 12px; font-weight: bolder; text-align: center;">Developed & Designed by Chronickl SARL | &copy;2021</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "posterG",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
